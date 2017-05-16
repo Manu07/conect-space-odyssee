@@ -6,15 +6,6 @@
 		<title>connection à Space Odyssee</title>
 		<link rel="shortcut icon" href="https://space-odyssee.com/favicon.png" type="image/x-icon">
 		<script>
-			function sav() {
-				localStorage.setItem('pseudo', document.getElementById('pseudo').value);
-				localStorage.setItem('password', document.getElementById('password').value);
-			}
-
-			function load() {
-				document.getElementById('pseudo').value = localStorage.getItem('pseudo');
-				document.getElementById('password').value = localStorage.getItem('password');
-			}
 		</script>
 	</head>
 	<body>
@@ -29,10 +20,8 @@
 				<input id="password" name="password" type="password" />
 				<button class="btn_blue" type="submit">GO</button>
 			</form>
-			<button onclick="sav();">SAVE</button>
 		</section>
 	</body>
 	<script>
-load();
 	</script>
 </html>
