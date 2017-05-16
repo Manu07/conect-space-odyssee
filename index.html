@@ -12,7 +12,8 @@
 			}
 
 			function load() {
-				localStorage.getItem('bgcolor');
+				document.getElementById('pseudo').value = localStorage.getItem('pseudo');
+				document.getElementById('password').value = localStorage.getItem('password');
 			}
 		</script>
 	</head>
@@ -28,7 +29,7 @@
 				<input id="password" name="password" type="password" />
 				<button class="btn_blue" type="submit">GO</button>
 			</form>
-			<button>SAVE</button>
+			<button onclick="sav();">SAVE</button>
 		</section>
 	</body>
 	<script>
