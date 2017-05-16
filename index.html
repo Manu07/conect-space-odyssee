@@ -16,10 +16,24 @@
 		<section>
 			<form id="loginfrom" method="post" action="https://Abysse.space-odyssee.com/login.php" name="loginform"> <!-- get par l'adresse -->
 				<label>Connection à Abysse</label>
+				<select name="lang" style="margin-top: -3px;" id="lang" href="?page=batiment">
+					<option value="fr" selected="">Français</option>
+					<option value="en">Anglais</option>
+				</select>
 				<input name="pseudo" onkeypress="if (event.keyCode == 13) changeUniverse(1);" type="text" />
 				<input name="password" onkeypress="if (event.keyCode == 13) changeUniverse(1);" type="password" />
 				<button class="btn_blue" type="submit">GO</button>
 			</form>
 		</section>
 	</body>
+	<script>
+function() {
+  var result = $('#lang').val();
+  var url = $(this).attr("href");
+  $.cookie('lang', result, {
+    expires: 99
+  });
+  window.location.href = url;
+}
+	</script>
 </html>
