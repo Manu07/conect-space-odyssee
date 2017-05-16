@@ -3,16 +3,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
 	<head>
 		<meta charset="utf-8" />
-		<title>/home/manu/Documents/programmation/www/space-odyssee/exemple.html</title>
+		<title>connection à Space Odyssee</title>
 		<link rel="shortcut icon" href="https://space-odyssee.com/favicon.png" type="image/x-icon">
+		<script>
+			function sav() {
+				localStorage.setItem('pseudo', document.getElementById('pseudo').value);
+				localStorage.setItem('password', document.getElementById('password').value);
+			}
+
+			function load() {
+				localStorage.getItem('bgcolor');
+			}
+		</script>
 	</head>
 	<body>
-		<header>
-    <!-- Placez ici le contenu de l'en-tête de votre page -->
-		</header>
-		<footer>
-    <!-- Placez ici le contenu du pied de page -->
-		</footer>
 		<section>
 			<form id="loginfrom" method="post" action="https://Abysse.space-odyssee.com/login.php" name="loginform"> <!-- get par l'adresse -->
 				<label>Connection à Abysse</label>
@@ -20,20 +24,14 @@
 					<option value="fr" selected="">Français</option>
 					<option value="en">Anglais</option>
 				</select>
-				<input name="pseudo" onkeypress="if (event.keyCode == 13) changeUniverse(1);" type="text" />
-				<input name="password" onkeypress="if (event.keyCode == 13) changeUniverse(1);" type="password" />
+				<input id="pseudo" name="pseudo" type="text" />
+				<input id="password" name="password" type="password" />
 				<button class="btn_blue" type="submit">GO</button>
 			</form>
+			<button>SAVE</button>
 		</section>
 	</body>
 	<script>
-function() {
-  var result = $('#lang').val();
-  var url = $(this).attr("href");
-  $.cookie('lang', result, {
-    expires: 99
-  });
-  window.location.href = url;
-}
+load();
 	</script>
 </html>
